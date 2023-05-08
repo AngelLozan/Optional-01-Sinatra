@@ -2,6 +2,8 @@ require "sinatra"
 require "sinatra/reloader" if development?
 require "pry-byebug"
 
+set :bind, "0.0.0.0"
+
 get "/" do
   @usernames = ["ssaunier", "Papillard"]
   erb :index

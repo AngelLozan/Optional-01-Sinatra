@@ -44,3 +44,7 @@ Clicking on the link should remove it from the cookbook and **redirect** to the 
 When you managed to code these 3 user stories, go on and try to implement the harder `import` and `mark as done` actions!
 
 Happy Sinatra!
+
+### Use external web app
+
+Start server with `ruby app.rb` and then in separate terminal use cmd `ngrok http 4567`
