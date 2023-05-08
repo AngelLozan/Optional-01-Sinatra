@@ -1,11 +1,20 @@
-<h1>First Ruby Web App</h1>
+<h1>Cookbook Recipes</h1>
 
 <p>
-  Very first <em>view</em>!
-  <br/>
-  <%= Time.now.utc.strftime("%I:%M %p")  %>
+  <%= Time.now.utc.strftime("%I:%M %p")  %> UTC
 </p>
 
-<a href='/about'>Check out the other page 👀</a>
 
+<% @recipes.each_with_index do |recipe, index| %>
+  <li>
+    <%= recipe.name %>: <%= recipe.description %> <%= recipe.rating %>
+     <form action="/destroy" method="post">
+        <input type="hidden" name="index" value="<%= index %>">
+        <button class="btn btn-danger" type="submit" value="Delete">X</button>
+      </form>
+    <%# <a class="btn btn-secondary btn-lg btn-block bg-danger" href="/destroy">X</a> %>
+  </li>
+<% end %>
 
+<br>
+<a class="btn btn-primary btn-lg btn-block" href='/new'> Make a recipe 🍲</a>

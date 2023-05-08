@@ -7,7 +7,6 @@ class Cookbook
 
   def initialize(csv_file_path)
     @csv_file_path = csv_file_path
-    # @recipes = []
     @recipes = load_existing_recipes
     @lookup_recipes = []
   end

@@ -1,0 +1,23 @@
+<h1>Add a new item</h1>
+
+<form action="/recipes" method="post">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" required></textarea>
+
+  <label for="rating">Rating:</label>
+  <select id="rating" name="rating" required>
+    <option value="">Choose a rating</option>
+    <option value="1">1 star</option>
+    <option value="2">2 stars</option>
+    <option value="3">3 stars</option>
+    <option value="4">4 stars</option>
+    <option value="5">5 stars</option>
+  </select>
+
+  <input type="submit" value="Submit">
+</form>
+
+<a class="btn btn-primary btn-lg btn-block" href='/'> Back </a>
