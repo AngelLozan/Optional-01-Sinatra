@@ -1,0 +1,22 @@
+<h1>Search for a new recipe</h1>
+
+<form action="/scrape" method="post">
+  <label for="ingredient">Ingredient:</label>
+  <input type="text" id="ingredient" name="ingredient" required>
+
+  <input type="submit" value="Submit">
+</form>
+
+<% @lookup.each_with_index do |recipe, index| %>
+  <li>
+    <%= recipe.name %>: <%= recipe.description %> <%= recipe.rating %>
+     <form action="/recipes" method="post">
+        <input type="hidden" name="index" value="<%= index %>">
+        <button class="btn btn-success" type="submit" value="add">+</button>
+      </form>
+    <%# <a class="btn btn-secondary btn-lg btn-block bg-danger" href="/destroy">X</a> %>
+  </li>
+<% end %>
+
+<br>
+<a class="btn btn-primary btn-lg btn-block" href='/'> Back </a>

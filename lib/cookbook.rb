@@ -52,6 +52,7 @@ class Cookbook
   def create_lookup(recipe)
     # Creates recipe
     # adds to cookbook
+    @lookup_recipes = []
     @lookup_recipes << recipe
     # Stores the recipes in a csv
     # CSV.open(@csv_file_path, "wb") do |csv|
