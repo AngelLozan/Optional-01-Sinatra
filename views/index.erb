@@ -1,16 +1,11 @@
 <h1>First Ruby Web App</h1>
 
 <p>
-  I'm in a <em>view</em>!
+  Very first <em>view</em>!
   <br/>
-  <%= Time.now %>
+  <%= Time.now.utc.strftime("%I:%M %p")  %>
 </p>
 
 <a href='/about'>Check out the other page 👀</a>
 
 
-<% @usernames.each do |username| %>
-  <li>
-    <%= username %>
-  </li>
-<% end %>
