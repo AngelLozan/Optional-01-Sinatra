@@ -47,12 +47,12 @@ class Cookbook
     CSV.open(@csv_file_path, "wb") do |csv|
       @recipes.each { |r| csv << [r.name, r.description, r.rating] }
     end
+    @lookup_recipes.clear # Clear lookup after adding recipe from lookup
   end
 
   def create_lookup(recipe)
     # Creates recipe
     # adds to cookbook
-    @lookup_recipes = []
     @lookup_recipes << recipe
     # Stores the recipes in a csv
     # CSV.open(@csv_file_path, "wb") do |csv|

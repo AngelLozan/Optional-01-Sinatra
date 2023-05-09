@@ -31,7 +31,7 @@ get "/new" do
 end
 
 get "/find" do
-  @lookup = cookbook.lookup.slice(0,5)
+  @lookup = cookbook.lookup.slice(0, 5)
   erb :find
 end
 
@@ -56,10 +56,15 @@ end
 
 # use Params to get information from form and pass to cookbook/ recipe methods.
 post "/recipes" do
-  name = params["name"]
-  description = params["description"]
-  rating = params["rating"]
-  recipe = Recipe.new({ name: name, description: description, rating: "(#{rating} / 5)" })
+  # puts ">>>>>>>>>>>>>>>> #{cookbook.lookup_recipes}"
+  if params['index']
+    recipe = cookbook.find(params['index'].to_i - 1)
+  else
+    name = params["name"]
+    description = params["description"]
+    rating = params["rating"]
+    recipe = Recipe.new({ name: name, description: description, rating: "(#{rating} / 5)" })
+  end
   cookbook.create(recipe)
   redirect to("/")
 end
