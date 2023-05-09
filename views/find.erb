@@ -7,6 +7,13 @@
   <input type="submit" value="Submit">
 </form>
 
+<br>
+<a class="btn btn-primary btn-lg btn-block" href='/'> Back </a>
+
+<br>
+<hr>
+<br>
+
 <% @lookup.each_with_index do |recipe, index| %>
   <li>
     <%= recipe.name %>: <%= recipe.description %> <%= recipe.rating %>
@@ -17,6 +24,3 @@
     <%# <a class="btn btn-secondary btn-lg btn-block bg-danger" href="/destroy">X</a> %>
   </li>
 <% end %>
-
-<br>
-<a class="btn btn-primary btn-lg btn-block" href='/'> Back </a>

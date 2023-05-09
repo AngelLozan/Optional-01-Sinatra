@@ -4,6 +4,16 @@
   <%= Time.now.utc.strftime("%I:%M %p")  %> UTC
 </p>
 
+<br>
+<a class="btn btn-primary btn-lg btn-block" href='/new'> Make a recipe 🍲</a>
+
+<br>
+<br>
+<a class="btn btn-primary btn-lg btn-block" href='/find'> Find a recipe 🔎</a>
+
+<br>
+<hr>
+<br>
 
 <% @recipes.each_with_index do |recipe, index| %>
   <li>
@@ -15,10 +25,3 @@
     <%# <a class="btn btn-secondary btn-lg btn-block bg-danger" href="/destroy">X</a> %>
   </li>
 <% end %>
-
-<br>
-<a class="btn btn-primary btn-lg btn-block" href='/new'> Make a recipe 🍲</a>
-
-<br>
-<br>
-<a class="btn btn-primary btn-lg btn-block" href='/find'> Find a recipe 🔎</a>

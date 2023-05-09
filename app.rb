@@ -70,7 +70,7 @@ post "/recipes" do
   redirect to("/")
 end
 
-# There is no specific view for the below call.
+# There is no specific view for the below call. However, will grab params from symbol at get path
 get "/team/:username" do
   puts params[:username]
   "The username is #{params[:username]}"
