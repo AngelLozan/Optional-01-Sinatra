@@ -15,6 +15,7 @@ set :bind, "0.0.0.0"
 
 # Load all recipes
 get "/" do
+  cookbook.lookup_recipes.clear
   @recipes = cookbook.all
   erb :index
 end
@@ -58,7 +59,7 @@ end
 post "/recipes" do
   # puts ">>>>>>>>>>>>>>>> #{cookbook.lookup_recipes}"
   if params['index']
-    recipe = cookbook.find(params['index'].to_i - 1)
+    recipe = cookbook.find(params['index'].to_i)
   else
     name = params["name"]
     description = params["description"]
